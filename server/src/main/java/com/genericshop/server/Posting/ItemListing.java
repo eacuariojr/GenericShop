@@ -1,5 +1,8 @@
-package com.genericshop.server.model;
+package com.genericshop.server.Posting;
 
+
+import com.genericshop.server.model.BaseEntity;
+import com.genericshop.server.User.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

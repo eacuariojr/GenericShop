@@ -1,4 +1,7 @@
-package com.genericshop.server.model;
+package com.genericshop.server.User;
+
+import com.genericshop.server.Posting.ItemListing;
+import com.genericshop.server.model.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
