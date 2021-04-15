@@ -1,12 +1,10 @@
 package com.genericshop.server.User;
 
 import com.genericshop.server.Posting.ItemListing;
+import com.genericshop.server.Posting.ItemReview;
 import com.genericshop.server.model.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
@@ -40,8 +38,13 @@ public class User extends BaseEntity
 
     //Bidirectional since there will be frequent calls from users to owned item listings
     //It shouldn't be too performance heavy since users generally won't have many listings.
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "seller",
+               fetch = FetchType.LAZY)
     private List<ItemListing> listings;
+
+    @OneToMany(mappedBy = "vendor",
+               fetch = FetchType.LAZY)
+    private List<VendorReview> userReviews;
 
     public String getFirstName()
     {

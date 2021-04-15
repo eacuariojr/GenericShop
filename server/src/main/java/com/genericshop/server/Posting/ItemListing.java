@@ -7,8 +7,9 @@ import com.genericshop.server.User.User;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.sql.Timestamp;
+import java.util.List;
 
-    /**
+/**
      * JavaBean domain object representing a listing for an item
      *
      * Refer to Google documentation for the entire schema diagram:
@@ -20,9 +21,9 @@ import java.sql.Timestamp;
 public class ItemListing extends BaseEntity
 {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_id")
-    private User user;
+    private User seller;
 
     @Column(name = "price")
     @NotEmpty
@@ -52,15 +53,18 @@ public class ItemListing extends BaseEntity
     @NotEmpty
     private Timestamp lastActive;
 
+    @OneToMany(mappedBy = "item",
+               fetch = FetchType.LAZY)
+    private List<ItemReview> userReviews;
 
-    public User getUser()
+    public User getSeller()
     {
-        return user;
+        return seller;
     }
 
-    public void setUser(User user)
+    public void setSeller(User user)
     {
-        this.user = user;
+        this.seller = user;
     }
 
     public double getPrice()
