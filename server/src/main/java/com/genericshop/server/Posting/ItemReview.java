@@ -1,6 +1,7 @@
 package com.genericshop.server.Posting;
 
 
+import com.genericshop.server.User.User;
 import com.genericshop.server.model.Review;
 
 import javax.persistence.*;
@@ -9,6 +10,10 @@ import javax.persistence.*;
 @Table(name = "item_review")
 public class ItemReview extends Review
 {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reviewer_id")
+    private User itemReviewer;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private ItemListing item;

@@ -3,6 +3,7 @@ package com.genericshop.server.User;
 import com.genericshop.server.Posting.ItemListing;
 import com.genericshop.server.Posting.ItemReview;
 import com.genericshop.server.model.BaseEntity;
+import com.genericshop.server.model.Review;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -44,7 +45,15 @@ public class User extends BaseEntity
 
     @OneToMany(mappedBy = "vendor",
                fetch = FetchType.LAZY)
-    private List<VendorReview> userReviews;
+    private List<VendorReview> vendorReviews;
+
+    @OneToMany(mappedBy = "vendorReviewer",
+               fetch = FetchType.LAZY)
+    private List<VendorReview> submittedVendorReviews;
+
+    @OneToMany(mappedBy = "itemReviewer",
+               fetch = FetchType.LAZY)
+    private List<ItemReview> submittedItemReviews;
 
     public String getFirstName()
     {

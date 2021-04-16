@@ -9,9 +9,6 @@ import java.sql.Timestamp;
 @MappedSuperclass
 public class Review extends BaseEntity
 {
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reviewer_id")
-    private User reviewer;
 
     @Column(name = "rating")
     @NotEmpty
@@ -22,16 +19,6 @@ public class Review extends BaseEntity
 
     @Column(name = "date")
     private Timestamp date;
-
-    public User getReviewer()
-    {
-        return reviewer;
-    }
-
-    public void setReviewer(User reviewer)
-    {
-        this.reviewer = reviewer;
-    }
 
     public int getRating()
     {

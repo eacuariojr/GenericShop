@@ -10,6 +10,10 @@ import javax.persistence.*;
 public class VendorReview extends Review
 {
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reviewer_id")
+    private User vendorReviewer;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vendor_id")
     private User vendor;
 
