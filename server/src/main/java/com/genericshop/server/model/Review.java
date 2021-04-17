@@ -1,6 +1,6 @@
 package com.genericshop.server.model;
 
-import com.genericshop.server.User.User;
+import com.genericshop.server.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
