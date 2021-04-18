@@ -9,6 +9,6 @@ public class HomepageController
     @GetMapping("/")
     public String welcome()
     {
-        return "/index.html";
+        return "index";
     }
 }
