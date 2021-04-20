@@ -113,4 +113,44 @@ public class User extends BaseEntity
     {
         this.photoPath = photoPath;
     }
+
+    public List<ItemListing> getListings()
+    {
+        return listings;
+    }
+
+    public void setListings(List<ItemListing> listings)
+    {
+        this.listings = listings;
+    }
+
+    public List<VendorReview> getVendorReviews()
+    {
+        return vendorReviews;
+    }
+
+    public void setVendorReviews(List<VendorReview> vendorReviews)
+    {
+        this.vendorReviews = vendorReviews;
+    }
+
+    public List<VendorReview> getSubmittedVendorReviews()
+    {
+        return submittedVendorReviews;
+    }
+
+    public void setSubmittedVendorReviews(List<VendorReview> submittedVendorReviews)
+    {
+        this.submittedVendorReviews = submittedVendorReviews;
+    }
+
+    public List<ItemReview> getSubmittedItemReviews()
+    {
+        return submittedItemReviews;
+    }
+
+    public void setSubmittedItemReviews(List<ItemReview> submittedItemReviews)
+    {
+        this.submittedItemReviews = submittedItemReviews;
+    }
 }
