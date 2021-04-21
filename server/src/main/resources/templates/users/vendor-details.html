@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
     <head>
         <title>Generic - Vendor</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" th:href="@{/assets/css/main.css}" />
+        <noscript><link rel="stylesheet" th:href="@{/assets/css/noscript.css}" /></noscript>
         <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
@@ -48,7 +48,7 @@
             <!-- Main -->
                 <div id="main">
                     <div class="inner">
-                        <h1>Username</h1>
+                        <h1 th:text="${user.firstName}"></h1>
 
                         <!-- Text -->
                             <section>
@@ -59,11 +59,11 @@
         </div>
 
         <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script th:src="@{/assets/js/jquery.min.js}"></script>
+        <script th:src="@{/assets/js/browser.min.js}"></script>
+        <script th:src="@{/assets/js/breakpoints.min.js}"></script>
+        <script th:src="@{/assets/js/util.js}"></script>
+        <script th:src="@{/assets/js/main.js}"></script>
 
     </body>
 </html>
