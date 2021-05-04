@@ -36,6 +36,9 @@ public class User extends BaseEntity
     @NotNull
     private String photoPath;
 
+    @Column(name = "profile_bio")
+    private String profileBio;
+
     //Bidirectional since there will be frequent calls from users to owned item listings
     //It shouldn't be too performance heavy since users generally won't have many listings.
     @OneToMany(mappedBy = "seller",
@@ -112,6 +115,16 @@ public class User extends BaseEntity
     public void setPhotoPath(String photoPath)
     {
         this.photoPath = photoPath;
+    }
+
+    public String getProfileBio()
+    {
+        return profileBio;
+    }
+
+    public void setProfileBio(String profileBio)
+    {
+        this.profileBio = profileBio;
     }
 
     public List<ItemListing> getListings()

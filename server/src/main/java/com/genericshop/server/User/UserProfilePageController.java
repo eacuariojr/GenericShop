@@ -55,6 +55,8 @@ public class UserProfilePageController
                 mav.setViewName("users/no-activity-details");
             }
 
+            mav.setViewName("users/users");
+
             //implement profile data every view will use.
 
             mav.addObject(user);

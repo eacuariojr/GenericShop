@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>User Profile</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" th:href="@{/assets/css/main.css}" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon_io/site.webmanifest">
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <span class="symbol"><img src="/images/favicon_io/favicon.ico" alt="" /></span><span
+                        class="title">GenericShop</span>
+                </a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li>
+                            <div>
+                                <input type="text" name="search" id="searchbar" placeholder="Search for any item">
+                            </div>
+                        </li>
+                        <li>
+                            <select name="categories" id="searchcategory">
+                                <option value="itemname">Item Name</option>
+                                <option value="category">Category</option>
+                                <option value="users">Users</option>
+                            </select>
+                        </li>
+                        <li><a href="#">User</a></li>
+                        <li><a href="/webpages/profile/cart.html">Cart</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/webpages/profile/wishlist.html">Wishlist</a></li>
+                <li><a href="/webpages/profile/purchase-history.html">Purchase History</a></li>
+                <li><a href="/webpages/profile/your-items.html">Your Items</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <h1 th:text="${user.firstName} + ' ' + ${user.lastName}" />
+                <span class="profile picture"><img src="/images/blank_profile.png" alt="Profile Picture" th:src="${user.photoPath}"></span>
+                <p th:text="${user.profileBio}" />
+
+                <section class="tiles">
+                    <article class="style1">
+                        <span class="image">
+                            <img src="/images/random-house.jpg" alt="picture">
+                        </span>
+                        <a href="generic.html">
+                            <h2>[Item Title]</h2>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="style2">
+                        <span class="image">
+                            <img src="/images/blank_profile.png" alt="picture">
+                        </span>
+                        <a href="generic.html">
+                            <h2>[Item Title]</h2>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </a>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-8 col-12-medium">
+
+                        <!-- Links -->
+                        <section>
+                            <h2>Links to Important Stuff</h2>
+                            <div>
+                                <div class="row">
+                                    <div>
+                                        <ul class="link-list last-child">
+                                            <li><a href="/webpages/help/buyer-guide.html">Buyer help</a></li>
+                                            <li><a href="/webpages/help/vendor-guide.html">Vendor help</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="link-list last-child">
+                                            <li><a href="/webpages/about/development.html">How the website was built</a>
+                                            </li>
+                                            <li><a href="/webpages/about/creator.html">About the creator</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="col-4 col-12-medium imp-medium">
+
+                        <!-- Blurb -->
+                        <section>
+                            <h2>GenericShop Disclaimer</h2>
+                            <p>
+                                GenericShop is not a real marketplace. You should not give us your money, at all. That
+                                would not be a smart idea in the slightest.
+                            </p>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="/../../assets/js/jquery.min.js"></script>
+    <script src="/../../assets/js/browser.min.js"></script>
+    <script src="/../../assets/js/breakpoints.min.js"></script>
+    <script src="/../../assets/js/util.js"></script>
+    <script src="/../../assets/js/main.js"></script>
+
+</body>
+
+</html>
