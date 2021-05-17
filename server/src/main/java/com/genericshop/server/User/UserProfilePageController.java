@@ -34,28 +34,31 @@ public class UserProfilePageController
             ModelAndView mav = new ModelAndView();
             User user = this.userRepo.findById(userId).get(); //Potentially throws NoSuchElementException
 
+            mav.setViewName("users/users");
+
             if(!user.getListings().isEmpty())
             {
-                mav.setViewName("users/vendor-details");
 
                 for(ItemListing itemListing : user.getListings())
                 {
+                    System.out.println("\n\n\n\n\n\n\n\n " + itemListing.getDescription() + "\n\n\n\n\n\n\n\n\n\n");
+//                    itemListing = this.itemListingsRepo.findById(itemListing.getId()).get();
                     //Implement filling required item listing data
                 }
+
                 //implement filling required review data
             }
             else if (!user.getSubmittedItemReviews().isEmpty())
             {
-                mav.setViewName("users/user-details");
 
                 //implement filling reviewing data
             }
             else
             {
-                mav.setViewName("users/no-activity-details");
+
             }
 
-            mav.setViewName("users/users");
+
 
             //implement profile data every view will use.
 
@@ -67,4 +70,5 @@ public class UserProfilePageController
             throw new NoSuchElementException();
         }
     }
+
 }

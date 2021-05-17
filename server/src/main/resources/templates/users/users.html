@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" th:href="@{/assets/css/main.css}" />
     <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css" />
+        <link rel="stylesheet" th:href="@{assets/css/noscript.css}" />
     </noscript>
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
@@ -71,29 +71,22 @@
                 <p th:text="${user.profileBio}" />
 
                 <section class="tiles">
-                    <article class="style1">
-                        <span class="image">
-                            <img src="/images/random-house.jpg" alt="picture">
-                        </span>
-                        <a href="generic.html">
-                            <h2>[Item Title]</h2>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="style2">
-                        <span class="image">
-                            <img src="/images/blank_profile.png" alt="picture">
-                        </span>
-                        <a href="generic.html">
-                            <h2>[Item Title]</h2>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </a>
-                    </article>
+                    <th:block th:each="listing: ${user.listings}">
+                        <article class="style1">
+                            <span class="image">
+                                <img src="/images/random-house.jpg" alt="picture" th:src="${listing.imagePath}"/>
+                            </span>
+                            <a href="generic.html">
+                                <h2 th:text="${listing.name}" />
+                                <h3 th:text="${listing.price}" />
+                                <div class="content">
+                                    <p th:text="${listing.description}" />
+                                </div>
+                            </a>
+                        </article>
+                    </th:block>
                 </section>
+
             </div>
         </div>
 
