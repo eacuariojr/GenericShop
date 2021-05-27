@@ -41,7 +41,6 @@ public class UserProfilePageController
 
                 for(ItemListing itemListing : user.getListings())
                 {
-                    System.out.println("\n\n\n\n\n\n\n\n " + itemListing.getDescription() + "\n\n\n\n\n\n\n\n\n\n");
 //                    itemListing = this.itemListingsRepo.findById(itemListing.getId()).get();
                     //Implement filling required item listing data
                 }
