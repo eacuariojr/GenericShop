@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Generic Generic Error</title>
+    <title>Generic - Generic Error</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <link rel="stylesheet" th:href="@{/assets/css/main.css}" />
+    <noscript>
+        <link rel="stylesheet" th:href="@{/assets/css/noscript.css}" />
+    </noscript>
+    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/favicon_io/apple-touch-icon.png}">
+    <link rel="icon" type="image/png" sizes="32x32" th:href="@{/favicon_io/favicon-32x32.png}">
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/favicon_io/favicon-16x16.png}">
+    <link rel="manifest" th:href="@{/favicon_io/site.webmanifest}">
 </head>
 <body>
 <div id="wrapper">
@@ -20,12 +22,26 @@
 
             <!-- Logo -->
             <a href="index.html" class="logo">
-                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+                <span class="symbol"><img src="/images/favicon_io/favicon.ico" alt="" th:src="@{/favicon_io/favicon.ico}"/></span><span
+                    class="title">GenericShop</span>
             </a>
-
             <!-- Nav -->
             <nav>
                 <ul>
+                    <li>
+                        <div>
+                            <input type="text" name="search" id="searchbar" placeholder="Search for any item">
+                        </div>
+                    </li>
+                    <li>
+                        <select name="categories" id="searchcategory">
+                            <option value="itemname">Item Name</option>
+                            <option value="category">Category</option>
+                            <option value="users">Users</option>
+                        </select>
+                    </li>
+                    <li><a href="#">User</a></li>
+                    <li><a href="/webpages/profile/cart.html">Cart</a></li>
                     <li><a href="#menu">Menu</a></li>
                 </ul>
             </nav>
@@ -37,33 +53,31 @@
     <nav id="menu">
         <h2>Menu</h2>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="generic.html">Ipsum veroeros</a></li>
-            <li><a href="generic.html">Tempus etiam</a></li>
-            <li><a href="generic.html">Consequat dolor</a></li>
-            <li><a href="elements.html">Elements</a></li>
+            <li><a href="/webpages/profile/wishlist.html">Wishlist</a></li>
+            <li><a href="/webpages/profile/purchase-history.html">Purchase History</a></li>
+            <li><a href="/webpages/profile/your-items.html">Your Items</a></li>
         </ul>
     </nav>
 
     <!-- Main -->
     <div id="main">
         <div class="inner">
-            <h1>We're experiencing issues</h1>
+            <h1>Evil magic is happening in the codebase.</h1>
 
             <!-- Text -->
             <section>
-                <h2>Please try again later.</h2>
+                <h2>We're calling an exorcist to fix the issue.</h2>
             </section>
         </div>
     </div>
 </div>
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
 
 </body>
 </html>
