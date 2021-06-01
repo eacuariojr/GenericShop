@@ -24,7 +24,7 @@
             <div class="inner">
 
                 <!-- Logo -->
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <span class="symbol"><img src="/images/favicon_io/favicon.ico" alt="" th:src="@{/favicon_io/favicon.ico}"/></span><span
                         class="title">GenericShop</span>
                 </a>
@@ -45,7 +45,7 @@
                             </select>
                         </li>
                         <li><a href="#">User</a></li>
-                        <li><a href="/webpages/profile/cart.html">Cart</a></li>
+                        <li><a th:href="'/cart/' + ${user.id}">Cart</a></li>
                         <li><a href="#menu">Menu</a></li>
                     </ul>
                 </nav>
@@ -57,9 +57,10 @@
         <nav id="menu">
             <h2>Menu</h2>
             <ul>
-                <li><a href="/webpages/profile/wishlist.html">Wishlist</a></li>
-                <li><a href="/webpages/profile/purchase-history.html">Purchase History</a></li>
-                <li><a href="/webpages/profile/your-items.html">Your Items</a></li>
+                <li><a th:href="'/wishlist/' + ${user.id}">Wishlist</a></li>
+                <li><a th:href="'/history/' + ${user.id}">Purchase History</a></li>
+                <li><a th:href="'/search/q=' + ${user.id}">Your Items</a></li>
+                <li><a href="/items/post/">Post New Item</a></li>
             </ul>
         </nav>
 
@@ -104,15 +105,15 @@
                                 <div class="row">
                                     <div>
                                         <ul class="link-list last-child">
-                                            <li><a href="/webpages/help/buyer-guide.html">Buyer help</a></li>
-                                            <li><a href="/webpages/help/vendor-guide.html">Vendor help</a></li>
+                                            <li><a href="/help/buyer-guide.html">Buyer help</a></li>
+                                            <li><a href="/help/vendor-guide.html">Vendor help</a></li>
                                         </ul>
                                     </div>
                                     <div>
                                         <ul class="link-list last-child">
-                                            <li><a href="/webpages/about/development.html">How the website was built</a>
+                                            <li><a href="/about/development.html">How the website was built</a>
                                             </li>
-                                            <li><a href="/webpages/about/creator.html">About the creator</a></li>
+                                            <li><a href="/about/creator.html">About the creator</a></li>
                                         </ul>
                                     </div>
                                 </div>
